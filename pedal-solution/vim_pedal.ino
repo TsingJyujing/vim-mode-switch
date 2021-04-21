@@ -8,8 +8,8 @@
 unsigned short STATUS_INSERT = 0;
 // Removing joggle for pushing button
 
-const int INSERT_MODE_BUTTON = 2; // Pin of I Mode
-const int VIEW_MODE_BUTTON = 3;   // Pin of I Mode
+const int INSERT_MODE_BUTTON = 3; // Pin of I Mode
+const int VIEW_MODE_BUTTON = 4;   // Pin of I Mode
 
 void setup()
 {
@@ -33,7 +33,7 @@ void pressSingleKey(char key)
   pressSingleKey(key, 100);
 }
 
-const unsigned int JOGGLE_REMOVING = 100; //ms
+const unsigned int JOGGLE_REMOVING = 20; //ms
 /**
  * Check pin (button) status without joggling
  */
@@ -71,6 +71,7 @@ void loop()
     if (checkButtonStatus(INSERT_MODE_BUTTON, HIGH))
     {
       pressSingleKey(KEY_ESC);
+      STATUS_INSERT = 0;
     }
   }
   else if (STATUS_INSERT == 2)
@@ -78,6 +79,7 @@ void loop()
     if (checkButtonStatus(VIEW_MODE_BUTTON, HIGH))
     {
       pressSingleKey(KEY_ESC);
+      STATUS_INSERT = 0;
     }
   }
   else
