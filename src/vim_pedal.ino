@@ -8,8 +8,9 @@
 unsigned short STATUS_INSERT = 0;
 // Removing joggle for pushing button
 
-const int INSERT_MODE_BUTTON = 3; // Pin of I Mode
-const int VIEW_MODE_BUTTON = 2;   // Pin of I Mode
+// Define the mode you'd like to switch
+const int INSERT_MODE_BUTTON = 2; // Pin of Insert Mode
+const int VIEW_MODE_BUTTON = 3;   // Pin of View Mode
 
 void setup()
 {
